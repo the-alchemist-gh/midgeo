@@ -1,5 +1,5 @@
 import React from 'react';
-import { getArtwork } from '../../../../middleware-geogating/midgeo/lib/imageLoader';
+import { getArtwork } from '../../lib/imageLoader';
 import Link from 'next/link'
 import Image from 'next/image';
 

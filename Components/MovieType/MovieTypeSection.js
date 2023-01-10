@@ -2,7 +2,7 @@ import {React, useState} from 'react'
 import MovieSlider from '../Carousel/MovieSlider';
 // import ImageView from '../components/Carousel/ImageViewer'
 import { dehydrate,useQuery,QueryClient } from '@tanstack/react-query'
-import { getMovies } from '../../../../middleware-geogating/midgeo/pages/api/getDetailedView';
+import { getMovies } from '../../pages/api/getDetailedView';
 
 export default function MovieTypeSection({genre}){
 
