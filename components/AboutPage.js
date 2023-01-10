@@ -6,7 +6,7 @@ function AboutPill() {
   return (
         
       
-    <h1>You are Browsing from {useCountryDetails()}</h1>
+    <h1>You've Been Redirected to this page {useCountryDetails()}</h1>
 
     
   );
