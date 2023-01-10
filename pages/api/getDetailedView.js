@@ -9,6 +9,7 @@ export const getMovies = ()=>{
 
 export const eachMovie = (id)=> {
     return (
+      
         movies.filter(movie => movie.ref === id)
     )
     
