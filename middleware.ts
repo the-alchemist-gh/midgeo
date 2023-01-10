@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
+import state from './components/state'
+import { useSnapshot } from 'valtio'
+
+
+    
 
 // Set pathname were middleware will be executed
 export const config = {
@@ -6,8 +11,11 @@ export const config = {
 }
 
 export function middleware(req: NextRequest) {
+  // const snap = useSnapshot(state);
   // Get country
+  
   const country = req.geo?.country
+  state.countryCode = country
   const country2 = 'gh'
   console.log(country)
   const url = req.nextUrl.clone()
