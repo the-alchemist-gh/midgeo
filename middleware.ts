@@ -8,14 +8,19 @@ export const config = {
 export function middleware(req: NextRequest) {
   // Get country
   const country = req.geo?.country
+  const country2 = 'gh'
+  console.log(country)
   const url = req.nextUrl.clone()
 
 // Update pathname
   url.pathname = `/${country}`
+  console.log(url)
   // req.nextUrl.pathname = 
 
   // Rewrite to URL
-  return NextResponse.rewrite(url)
+  return NextResponse.redirect(new URL('/about-2', req.url))
+
+  // return NextResponse.rewrite(url)
 }
 
 
