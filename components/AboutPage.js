@@ -7,5 +7,5 @@ function AboutPill() {
     <h1>You have Been Redirected to this page</h1>
   );
 }
-
+ 
 export default AboutPill;
