@@ -15,9 +15,11 @@ export function middleware(req: NextRequest) {
   // Get country
   
   const country = req.geo?.country
-  state.countryCode = country
+  state.countryCode = country || ""
   const country2 = 'gh'
   console.log(country)
+  console.log(state.countryCode)
+
   const url = req.nextUrl.clone()
 
 // Update pathname
