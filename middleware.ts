@@ -37,9 +37,11 @@ export function middleware(req: NextRequest) {
   url.pathname = `/${myCountry}`
   console.log(url)
   // req.nextUrl.pathname = 
-
+  if(myCountry === "GH"){
+    return NextResponse.redirect(new URL('/about-2', req.url))
+  }
   // Rewrite to URL
-  return NextResponse.redirect(new URL('/about-2', req.url))
+ 
 
   // return NextResponse.rewrite(url)
 }
