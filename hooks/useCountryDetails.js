@@ -4,15 +4,16 @@ import { useSnapshot } from 'valtio'
 import state from '../components/state'
 
 
-function useCountryDetails() {
+function useCountryDetails(code) {
   // state.countryCode = "GH"
   const snap = useSnapshot(state)
-  const [currentCountry, setCurrentCountry] = useState(snap.countryCode);
-  console.log(snap.countryCode)
+  const [currentCountry, setCurrentCountry] = useState(code);
+  // console.log(snap.countryCode)
   // const user = getUserDetails();
   useEffect(() => {
-      setCurrentCountry(snap.countryCode);
+      setCurrentCountry(code);
   }, [snap.countryCode]);
+  console.log(code)
   return currentCountry;
 }
 

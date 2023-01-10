@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import state from './components/state'
 import { useSnapshot } from 'valtio'
+import useCountryDetails  from "./hooks/useCountryDetails"
 
 
     
@@ -10,7 +11,7 @@ export const config = {
   matcher: '/',
 }
 
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   // const snap = useSnapshot(state);
   // Get country
   
@@ -28,11 +29,12 @@ export function middleware(req: NextRequest) {
    // Setting cookies on the response using the `ResponseCookies` API
    const response = NextResponse.next()
    response.cookies.set('countryCode', `${myCountry}`)
+   response.cookies.set('countryCode2', "GH")
   //  response.cookies.set({
   //    countryCode: myCountry,
   //  })
-  const cookie = response.cookies.get('countryCode')
-  console.log(cookie)
+  const cookie = response.cookies.get('countryCode2')
+  console.log(cookie);
    const cookie2 = response.cookies.getAll()
    console.log(cookie2)
 // Update pathname
