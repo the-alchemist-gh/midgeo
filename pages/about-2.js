@@ -2,18 +2,19 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import state from '../components/state'
-import { useSnapshot } from 'valtio'
+import useCountryDetails from '../hooks/useCountryDetails'
+// import state from '../components/state'
+// import { useSnapshot } from 'valtio'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function about() {
-    const snap = useSnapshot(state)
+    // const snap = useSnapshot(state)
     // state.countryCode = 'GH'
   return (
     <>
     {
-        console.log(snap.countryCode)
+        console.log(useCountryDetails())
     }
       <Head>
         <title>Create Next App</title>
@@ -22,7 +23,7 @@ export default function about() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1>Browsing from {snap.countryCode}</h1>
+        <h1>Browsing from {useCountryDetails()}</h1>
       </main>
     </>
   )
