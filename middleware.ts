@@ -14,21 +14,34 @@ export function middleware(req: NextRequest) {
   // const snap = useSnapshot(state);
   // Get country
   
-  const country = req.geo?.country
-  state.countryCode = country || ""
+  const myCountry = req.geo?.country
+  state.countryCode = myCountry || ""
   const country2 = 'gh'
-  console.log(country)
+  console.log(myCountry)
   console.log(state.countryCode)
 
   const url = req.nextUrl.clone()
 
+  const allCookies = req.cookies.getAll()
+  console.log(allCookies)
+
+   // Setting cookies on the response using the `ResponseCookies` API
+   const response = NextResponse.next()
+   response.cookies.set('vercel', 'fast')
+   response.cookies.set({
+     countryCode: myCountry,
+   })
+   const cookie = response.cookies.getAll()
+   console.log(cookie)
 // Update pathname
-  url.pathname = `/${country}`
+  url.pathname = `/${myCountry}`
   console.log(url)
   // req.nextUrl.pathname = 
 
   // Rewrite to URL
-  return NextResponse.redirect(new URL('/about-2', req.url))
+  return response
+  
+  // NextResponse.redirect(new URL('/about-2', req.url))
 
   // return NextResponse.rewrite(url)
 }
