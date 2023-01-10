@@ -23,6 +23,7 @@ export default function about() {
       </Head>
       <main className={styles.main}>
         <AboutPill/>
+        
       </main>
     </>
   )
