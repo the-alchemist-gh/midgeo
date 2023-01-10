@@ -27,10 +27,10 @@ export function middleware(req: NextRequest) {
 
    // Setting cookies on the response using the `ResponseCookies` API
    const response = NextResponse.next()
-   response.cookies.set('vercel', 'fast')
-   response.cookies.set({
-     countryCode: myCountry,
-   })
+   response.cookies.set('countryCode', `${myCountry}`)
+  //  response.cookies.set({
+  //    countryCode: myCountry,
+  //  })
    const cookie = response.cookies.getAll()
    console.log(cookie)
 // Update pathname
