@@ -23,7 +23,7 @@ export function middleware(req: NextRequest) {
   const url = req.nextUrl.clone()
 
   const allCookies = req.cookies.getAll()
-  console.log(allCookies)
+  // console.log(allCookies)
 
    // Setting cookies on the response using the `ResponseCookies` API
    const response = NextResponse.next()
@@ -31,8 +31,10 @@ export function middleware(req: NextRequest) {
   //  response.cookies.set({
   //    countryCode: myCountry,
   //  })
-   const cookie = response.cookies.getAll()
-   console.log(cookie)
+  const cookie = response.cookies.get('countryCode')
+  console.log(cookie)
+   const cookie2 = response.cookies.getAll()
+   console.log(cookie2)
 // Update pathname
   url.pathname = `/${myCountry}`
   console.log(url)
