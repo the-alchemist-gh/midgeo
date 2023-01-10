@@ -4,7 +4,7 @@ import useCountryDetails from '../hooks/useCountryDetails'
 function AboutPill() {
     console.log(useCountryDetails())
   return (
-    <h1>You've Been Redirected to this page</h1>
+    <h1>You have Been Redirected to this page</h1>
   );
 }
 
