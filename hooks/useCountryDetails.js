@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 // import { getUserDetails } from '../lib/user-utils';
 import { useSnapshot } from 'valtio'
-import state from '../components/state'
+import state from '../Components/state'
 
 
 function useCountryDetails(code) {

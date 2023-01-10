@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import state from './components/state'
+import state from './Components/state'
 import { useSnapshot } from 'valtio'
 import useCountryDetails  from "./hooks/useCountryDetails"
 
