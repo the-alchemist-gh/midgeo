@@ -7,7 +7,7 @@ import useCountryDetails from "../../hooks/useCountryDetails"
 
 export default function MovieTypeSection({genre}){
  const getCountry = useCountryDetails();
- console.log(getCountry);
+//  console.log(getCountry);
     const { data, error,loading } = useQuery(["movies"], getMovies);
     if(loading === "loading"){
         return <div>Loading...</div>
@@ -34,11 +34,11 @@ export default function MovieTypeSection({genre}){
         return (
             data?.filter((movie)=>{
                 // const whatToSearch = ["genres"]
-                console.log(getCountry)
+                // console.log(getCountry)
                 return (
                     
                     // whatToSearch.some(item => movie[genres].toLowerCase().includes("Drama".toLowerCase()))
-                    movie.genres.includes(genre)
+                    movie.genres.includes(genre) && movie.countries.includes(getCountry)
         
                 ); 
                 

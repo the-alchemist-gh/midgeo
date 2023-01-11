@@ -20,7 +20,7 @@ function useCountryDetails() {
       });
       
   }, [snap.countryCode]);
-  console.log(currentCountry)
+  // console.log(currentCountry)
   return currentCountry;
 }
 
