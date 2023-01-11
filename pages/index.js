@@ -8,7 +8,9 @@ import MovieTypeSection from '../Components/MovieType/MovieTypeSection'
 
 export default function Home() {
 
-  const myGenre = ["History"]
+  // const myGenre = ["History"]
+  const myGenre = ["Kalasha Award Winners","History","Drama","Romance","Thriller"]
+
   return (
     <>
       <Head>

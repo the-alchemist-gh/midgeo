@@ -1,5 +1,5 @@
 import React from 'react';
-import useCountryDetails from '../../../middleware-geogating/midgeo/hooks/useCountryDetails'
+import useCountryDetails from '../hooks/useCountryDetails'
 
 function AboutPill() {
     console.log(useCountryDetails())
