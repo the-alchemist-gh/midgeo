@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 import MovieTypeSection from '../Components/MovieType/MovieTypeSection'
 // import state from '../Components/state'
 // import {useSnapshot} from 'valtio'
-import useCountryDetails from "../hooks/useCountryDetails"
+import {useCountryDetails} from "../hooks/useCountryDetails"
 // const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {

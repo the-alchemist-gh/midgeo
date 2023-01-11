@@ -4,7 +4,7 @@ import MovieSlider from '../Carousel/MovieSlider';
 import { dehydrate,useQuery,QueryClient } from '@tanstack/react-query'
 import { getMovies } from '../../pages/api/getDetailedView';
 
-export default function MovieTypeSection({genre}){
+export default function MovieTypeSection({genre, getCountry}){
 
     const { data, error,loading } = useQuery(["movies"], getMovies);
     if(loading === "loading"){
@@ -32,6 +32,7 @@ export default function MovieTypeSection({genre}){
         return (
             data?.filter((movie)=>{
                 // const whatToSearch = ["genres"]
+                console.log(getCountry)
                 return (
                     
                     // whatToSearch.some(item => movie[genres].toLowerCase().includes("Drama".toLowerCase()))

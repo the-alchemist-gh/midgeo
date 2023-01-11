@@ -23,5 +23,5 @@ export const DetailedView = (id) => {
     // eachMovie(id)
     useQuery(['movieid', id], ()=>eachMovie(id))
   )
-}
+} 
 
