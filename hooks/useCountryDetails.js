@@ -4,16 +4,23 @@ import { useSnapshot } from 'valtio'
 import state from '../Components/state'
 
 
-function useCountryDetails(code) {
+function useCountryDetails() {
   // state.countryCode = "GH"
+  let result ={}
   const snap = useSnapshot(state)
-  const [currentCountry, setCurrentCountry] = useState(code);
+  const [currentCountry, setCurrentCountry] = useState("");
   // console.log(snap.countryCode)
   // const user = getUserDetails();
   useEffect(() => {
-      setCurrentCountry(code);
+    fetch('https://midgeo-jc8xj6253-the-alchemist-gh.vercel.app/api/edge')
+      .then((r) => r.json())
+      .then((data) => {
+        result = data;
+        setCurrentCountry(data.mycountry);
+      });
+      
   }, [snap.countryCode]);
-  console.log(code)
+  console.log(currentCountry)
   return currentCountry;
 }
 

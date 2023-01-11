@@ -13,7 +13,7 @@ export const getContext = (req, rawKey) => {
   // Necessary for node in development environment
   if (!headerValue) {
     headerValue = req.socket?._httpMessage?.getHeader(key);
-  }
+  } 
 
   if (headerValue) {
     return headerValue;

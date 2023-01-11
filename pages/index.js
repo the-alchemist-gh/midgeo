@@ -1,13 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
+// import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import MovieTypeSection from '../Components/MovieType/MovieTypeSection'
-
+// import state from '../Components/state'
+// import {useSnapshot} from 'valtio'
+import {useCountryDetails} from "../hooks/useCountryDetails"
 // const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
+  // const snapCountry = useSnapshot(state);
   // const myGenre = ["History"]
   const myGenre = ["Kalasha Award Winners","History","Drama","Romance","Thriller"]
 
@@ -20,13 +23,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-          {
-                myGenre.map((item,index)=>(
-                  <section key={index} className='z-0 mx-[4%]'>
-                    <MovieTypeSection genre={item}/>
-                  </section>
-                ))
-              }
+        {
+          myGenre.map((item,index)=>(
+            <section key={index} className='z-0 mx-[4%]'>
+              <MovieTypeSection genre={item} getCountry={useCountryDetails()}/>
+            </section>
+          ))
+        }
       </main>
     </>
   )
