@@ -3,7 +3,7 @@ import MovieSlider from '../Carousel/MovieSlider';
 // import ImageView from '../components/Carousel/ImageViewer'
 import { dehydrate,useQuery,QueryClient } from '@tanstack/react-query'
 import { getMovies } from '../../pages/api/getDetailedView';
-import { useCountryDetails } from "../hooks/useCountryDetails"
+import { useCountryDetails } from "../../hooks/useCountryDetails"
 
 export default function MovieTypeSection({genre}){
  const getCountry = useCountryDetails();
