@@ -3,9 +3,11 @@ import MovieSlider from '../Carousel/MovieSlider';
 // import ImageView from '../components/Carousel/ImageViewer'
 import { dehydrate,useQuery,QueryClient } from '@tanstack/react-query'
 import { getMovies } from '../../pages/api/getDetailedView';
+import { useCountryDetails } from "../hooks/useCountryDetails"
 
-export default function MovieTypeSection({genre, getCountry}){
-
+export default function MovieTypeSection({genre}){
+ const getCountry = useCountryDetails();
+ console.log(getCountry);
     const { data, error,loading } = useQuery(["movies"], getMovies);
     if(loading === "loading"){
         return <div>Loading...</div>

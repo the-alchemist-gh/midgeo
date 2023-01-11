@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 import MovieTypeSection from '../Components/MovieType/MovieTypeSection'
 // import state from '../Components/state'
 // import {useSnapshot} from 'valtio'
-import { useCountryDetails } from "../hooks/useCountryDetails"
+// import { useCountryDetails } from "../hooks/useCountryDetails"
 // const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
   // const snapCountry = useSnapshot(state);
   // const myGenre = ["History"]
   const myGenre = ["Kalasha Award Winners","History","Drama","Romance","Thriller"]
-  const getCountry=useCountryDetails()
+  // const getCountry=useCountryDetails()
   return (
     <>
       <Head>
@@ -26,7 +26,7 @@ export default function Home() {
         {
           myGenre.map((item,index)=>(
             <section key={index} className='z-0 mx-[4%]'>
-              <MovieTypeSection genre={item} getCountry={getCountry}/>
+              <MovieTypeSection genre={item}/>
             </section>
           ))
         }
